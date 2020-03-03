@@ -2,6 +2,10 @@ body{
   font-family: fantasy;
 }
 
+.kehys{
+  margin: 2vw;
+}
+
 .oma_button{
   background-color: #571926;
   border-color: #571926;
@@ -18,23 +22,39 @@ body{
 
 .otsikkokuva{
   width: 100%;
-  height: 40vw;
+  height: 20vw;
 }
 
 .otsikkoteksti {
   color: white;
+  -webkit-text-stroke: 1px #571926;
   position: absolute;
-  top: 20vw;
+  top: 8vw;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 .otsikkoteksti h1 {
-  font-size: 3em;
+  font-size: 4vw;
+}
+.otsikkoteksti p {
+  font-size: 3vw;
 }
 
 @media only screen and (max-width: 840px) {
   .otsikkoteksti h1{
-    font-size: 1.5em;
+    font-size: 4vw;
   }
+}
+
+#elokuvan_juliste{
+  width: 40%;
+}
+
+.poster_area{
+  height: 40vh;
+}
+
+.row{
+  margin-bottom: 2vh;
 }

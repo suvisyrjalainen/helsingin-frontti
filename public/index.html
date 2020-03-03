@@ -28,64 +28,67 @@
   <div class="otsikko">
     <img class="otsikkokuva" src="images/popcorn.jpg" alt="Kuvaa ei löydy">
     <div class="otsikkoteksti">
-      <h1>Helsingin frontend</h1>
+      <h1>Kodarit Mini Full Stack</h1>
       <p>Arvostellaan leffoja</p>
     </div>
   </div>
+  <div class="kehys">
 
-  <div class="row">
-    <div class="col-sm-4">
-      <h4>Anna elokuvan tiedot</h4>
+    <div class="row">
+      <div class="col-sm-4">
+        <h4>Anna elokuvan tiedot</h4>
 
-      <form>
-        <div class="form-group">
-          <label for="elokuva">Elokuvan nimi:</label>
-          <input type="text" class="form-control" id="elokuva">
+        <form>
+          <div class="form-group">
+            <label for="elokuva">Elokuvan nimi:</label>
+            <input type="text" class="form-control" id="elokuva">
+          </div>
+          <div class="form-group">
+            <label for="vuosi">Vuosi:</label>
+            <input type="text" class="form-control" id="vuosi">
+          </div>
+          <button onclick="haeElokuva();" class="btn oma_button" type="button">Hae</button>
+        </form>
+
+      </div>
+
+      <div class="col-sm-4">
+        <h4 id="elokuvan_nimi">Tähän tulee elokuva</h4>
+        <div class="poster_area">
+          <img id="elokuvan_juliste" src="" alt="">
         </div>
-        <div class="form-group">
-          <label for="vuosi">Vuosi:</label>
-          <input type="text" class="form-control" id="vuosi">
-        </div>
-        <button onclick="haeElokuva();" class="btn oma_button" type="button">Hae</button>
-      </form>
 
+      </div>
+
+      <div class="col-sm-4">
+        <h4>Arvostele Elokuva</h4>
+
+        <form>
+          <div class="form-group">
+            <label for="arvostelu">Arvostelu</label>
+            <input type="text" class="form-control" id="arvostelu">
+          </div>
+          <div class="form-group">
+            <label for="arvostelija">Arvostelija</label>
+            <input type="textarea" class="form-control" id="arvostelija">
+          </div>
+          <button onclick="arvosteleElokuva();" class="btn oma_button" type="button">Arvostele</button>
+        </form>
+      </div>
     </div>
 
-    <div class="col-sm-4">
-      <h4 id="elokuvan_nimi">Tähän tulee elokuva</h4>
-      <img id="elokuvan_juliste" src="" alt="">
-    </div>
+    <br>
+    <h4>Leffa-arvostelut</h4>
+    <table id="arvostelutaulukko" class="table">
+      <tbody>
+        <tr>
+          <th>Leffan Nimi</th>
+          <th>Arvostelu</th>
+          <th>Arvostelija</th>
+        </tr>
+      </tbody>
+    </table>
 
-    <div class="col-sm-4">
-      <h4>Arvostele Elokuva</h4>
-
-      <form>
-        <div class="form-group">
-          <label for="arvostelu">Arvostelu</label>
-          <input type="text" class="form-control" id="arvostelu">
-        </div>
-        <div class="form-group">
-          <label for="arvostelija">Arvostelija</label>
-          <input type="textarea" class="form-control" id="arvostelija">
-        </div>
-        <button onclick="arvosteleElokuva();" class="btn oma_button" type="button">Arvostele</button>
-      </form>
-    </div>
   </div>
-
-  <br>
-  <h4>Leffa-arvostelut</h4>
-  <table id="arvostelutaulukko" class="table">
-    <tbody>
-      <tr>
-        <th>Leffan Nimi</th>
-        <th>Arvostelu</th>
-        <th>Arvostelija</th>
-      </tr>
-    </tbody>
-  </table>
-
-
-
   </body>
 </html>

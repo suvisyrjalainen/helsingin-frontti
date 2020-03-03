@@ -1,3 +1,5 @@
+var haetun_leffan_nimi = "";
+
 haeArvosteludata();
 
 async function haeArvosteludata(){
@@ -29,6 +31,15 @@ function taytaArvostelutaulukko(data) {
   }
 }
 
+function tyhjenna_arvostelutaulukko(){
+  var table = document.getElementById("arvostelutaulukko");
+  var rivien_maara = table.rows.length - 1;
+
+  for (var i = 0; i < rivien_maara; i++) {
+      table.deleteRow(1);
+  }
+}
+
 
 function haeElokuva(){
 
@@ -48,6 +59,8 @@ async function haeElokuvaData(){
 
   const vastaus = await fetch(hakurimpsu);
   const data = await vastaus.json();
+  haetun_leffan_nimi = data.Title;
+  console.log(haetun_leffan_nimi);
   document.getElementById("elokuvan_nimi").innerHTML = data.Title;
 
   var poster = document.getElementById("elokuvan_juliste");
@@ -56,10 +69,10 @@ async function haeElokuvaData(){
 }
 
 function arvosteleElokuva(){
-  var leffa = document.getElementById("elokuva").value;
+  var leffa = haetun_leffan_nimi;
   var arvostelu = document.getElementById("arvostelu").value;
   var arvostelija = document.getElementById("arvostelija").value;
-
+  console.log(haetun_leffan_nimi);
   const data = {leffa, arvostelu, arvostelija};
   const options = {
     method: "POST",
@@ -71,8 +84,10 @@ function arvosteleElokuva(){
 
   fetch('/api/arvostelu', options).then(function(response) {
       console.log(response)
-      if(response.status == 201){
+      if(response.status == 200){
         console.log("Push OK!")
+        tyhjenna_arvostelutaulukko()
+        haeArvosteludata();
       }
     }, function(error){
       console.log(error.message);
